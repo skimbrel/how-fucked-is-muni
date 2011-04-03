@@ -1,0 +1,18 @@
+<p>Let's find out. Pick a route:</p>
+<div class="container">
+[% FOREACH key IN routes.keys.sort %]
+[% IF key.match('\w OWL') %]
+[% name = key.substr(0,1)
+   owl = 1
+%]
+[% ELSE %]
+[% name = key
+   owl = 0
+%]
+[% END %]
+<div class="circle" style="background-color: [% colors.background(agency, key) %];">
+<a class="route" href="/[% key %]" title="[% routes.$key %]" style="color: [% colors.foreground(agency, key) %];">[% name %]</a>
+[% IF owl %]<span style="font-size: 14px; color: [% colors.foreground(agency, key) %]">OWL</span>[% END %] 
+</div>
+[% END %]
+</div>
