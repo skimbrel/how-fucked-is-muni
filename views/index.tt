@@ -1,3 +1,4 @@
+<div id="header"><h1>How Fucked Is Muni?</h1></div>
 <p>Let's find out. Pick a route:</p>
 <div class="container">
 [% FOREACH key IN routes.keys.sort %]
