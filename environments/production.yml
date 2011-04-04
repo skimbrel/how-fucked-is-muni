@@ -9,7 +9,7 @@ logger: "file"
 # don't consider warnings critical
 warnings: 0
 
-# hide errors 
+# hide errors
 show_errors: 0
 
 # cache route resolution for maximum performance
@@ -19,3 +19,4 @@ route_cache: 1
 # The transit agency we're talking about - this should be
 # an agency ID string from ProximoBus
 agency: "sf-muni"
+
