@@ -47,7 +47,7 @@ sub is_weekend {
 has 'cache' => (
     is => 'rw',
     default => sub {
-        my $cache = CHI->new( driver => 'Memory', global => 1 );
+        my $cache = CHI->new( driver => 'File', global => 1 );
         return $cache;
     },
 );
