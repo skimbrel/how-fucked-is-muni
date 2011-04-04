@@ -1,17 +1,32 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="http://www.facebook.com/2008/fbml">
 <head>
 <meta http-equiv="Content-type" content="text/html; charset=<% settings.charset %>" />
+<meta property="og:title" content="How Fucked Is Muni?" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://howfuckedismuni.com/" />
+<meta property="fb:admins" content="kimbrel" />
+<meta property="og:site_name" content="How Fucked Is Muni?" />
+<meta property="og:description" content="How fucked is San Francisco's Muni transit system? Let's find out." />
 <title>How Fucked Is Muni?</title>
 <link rel="stylesheet" href="[% request.uri_base %]/css/style.css" />
 
+
 </head>
+
 <body>
 [% content %]
 <div id="footer">
 <p>By <a href="http://shutupandclickit.com/">Sam Kimbrel</a>.</p>
 <p>Powered by <a href="http://perldancer.org/">Dancer</a> [% dancer_version %]</p>
+<div id="fb-root"></div>
+<p>
+<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
+<fb:like href="http://howfuckedismuni.com/" layout="button_count" show_faces="false" width="90" font="lucida grande"></fb:like>
+</p>
 </div>
 </body>
 </html>
