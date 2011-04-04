@@ -215,6 +215,45 @@ sub get_routes {
     });
 }
 
+sub get_sorted_names {
+    my $self = shift;
+    my ($agency) = @_;
+
+    my $routes = $self->get_routes($agency);
+    my @names = keys %$routes;
+    return [ sort _by_route_name @names ];
+
+}
+
+sub _by_route_name {
+    # Put the lettered routes first, in lexicographic order.
+    if (($a =~ /^[A-Z]/) && ($b =~ /^[A-Z]/)) {
+        return $a cmp $b;
+    }
+    elsif ($a =~ /^[A-Z]/) {
+        return -1;
+    }
+    elsif ($b =~ /^[A-Z]/) {
+        return 1;
+    }
+    # Numbered lines should go in numeric order with
+    # the "main" line coming before any suffixed variants thereof.
+    else {
+        my $a_ = $a;
+        my $b_ = $b;
+        my $a_suf = ($a_ =~ s/\D+//);
+        my $b_suf = ($b_ =~ s/\D+//);
+        if ($a_ <=> $b_) {
+            return $a_ <=> $b_;
+        }
+        else {
+            return $a_suf cmp $b_suf;
+        }
+    }
+}
+
+
+
 sub _get_routes {
     my $self = shift;
     my ($agency) = @_;

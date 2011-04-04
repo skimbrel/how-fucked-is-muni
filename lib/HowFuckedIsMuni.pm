@@ -10,7 +10,8 @@ get '/' => sub {
         my $checker = HowFuckedIsMuni::RouteChecker->instance();
         my $colors = HowFuckedIsMuni::RouteColors->new();
         my $routes = $checker->get_routes(config->{agency});
-        template 'index', { agency => config->{agency}, routes => $routes, colors => $colors };
+        my $names = $checker->get_sorted_names(config->{agency});
+        template 'index', { agency => config->{agency}, names => $names, routes => $routes, colors => $colors };
     }
     catch {
         error "Error loading all routes: $_";
