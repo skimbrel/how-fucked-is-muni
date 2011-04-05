@@ -13,7 +13,7 @@
 <meta property="og:description" content="How fucked is San Francisco's Muni transit system? Let's find out." />
 <title>How Fucked Is Muni?</title>
 <link rel="stylesheet" href="[% request.uri_base %]/css/style.css" />
-
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js" />
 
 </head>
 

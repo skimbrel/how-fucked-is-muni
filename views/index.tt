@@ -17,3 +17,9 @@
 </div>
 [% END %]
 </div>
+<script type="text/javascript">
+$(".circle").click(function(){
+     window.location=$(this).find("a").attr("href");
+     return false;
+});
+</script>
