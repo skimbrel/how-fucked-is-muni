@@ -51,6 +51,11 @@ div.circle {
     cursor: pointer;
 }
 
+#statsarea {
+    margin-left: 35%;
+    width: 70%;
+}
+
 #footer {
     text-align: center;
 }

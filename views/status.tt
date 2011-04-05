@@ -1,9 +1,10 @@
-<div id="header"><h1>How Fucked Is The [% name %]?</h1></div>
-<p>The [% name %] is [% IF status.is_fucked %] probably pretty [% ELSE %] not particularly [% END %] fucked.</p>
-<p>Stats:<ul>
+<div id="header"><h2>How Fucked Is The [% name %]?</h2></div>
+<p><h2>The [% name %] is [% IF status.is_fucked %] probably pretty [% ELSE %] not particularly [% END %] fucked.</h2></p>
+<p>Stats:</p><div id="statsarea"><ul>
 <li> [% status.delayed %] delayed vehicles of [% status.total %] total ([% status.delayed_pct * 100 %] percent delayed)
 [% IF status.total == 0 %]<br /><small>Are you sure this line is running?</small>[% END %]
 </li>
 <li> Smallest gap between vehicles: [% status.small_gap %] minutes</li>
 <li> Biggest gap between vehicles: [% status.big_gap %] minutes</li>
-</p>
+</ul>
+</div>
