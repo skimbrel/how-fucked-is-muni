@@ -23,6 +23,8 @@
 <p>By <a href="http://shutupandclickit.com/">Sam Kimbrel</a>.</p>
 <p>Powered by <a href="http://perldancer.org/">Dancer</a> [% dancer_version %], <a href="http://github.com/miyagawa/starman">Starman</a>, and Amazon EC2.</p>
 <p>Data from <a href="http://proximobus.appspot.com">ProximoBus.</a>
+<p>Inspired by <a href="http://istheltrainfucked.com/">Is The L Train Fucked?</a>.</p>
+
 <div id="fb-root"></div>
 <p>
 <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
