@@ -1,10 +1,15 @@
 <div id="header"><h2>How Fucked Is Muni?</h2>
+[% IF status.total > 0 %]
 <p><h2>The [% name %] is [% IF status.is_fucked %] probably pretty [% ELSE %] not particularly [% END %] fucked.</h2></p></div>
 <p>Stats:</p><div id="statsarea"><ul>
 <li> [% status.delayed %] delayed vehicles of [% status.total %] total ([% status.delayed_pct * 100 %] percent delayed)
-[% IF status.total == 0 %]<br /><small>Are you sure this line is running?</small>[% END %]
 </li>
+[% IF status.total > 2 %]
 <li> Smallest gap between vehicles: [% status.small_gap %] minutes</li>
 <li> Biggest gap between vehicles: [% status.big_gap %] minutes</li>
+[% END %]
 </ul>
 </div>
+[% ELSE %]
+<p><h2>The [% name %] doesn't appear to be running right now.</h2></p>
+[% END %]
