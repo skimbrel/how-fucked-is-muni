@@ -4,6 +4,8 @@ use strict;
 use warnings;
 
 use CHI;
+use CHI::Driver::Redis;
+use Dancer ':syntax';
 use Moose;
 use WWW::ProximoBus;
 
@@ -47,7 +49,11 @@ sub is_weekend {
 has 'cache' => (
     is => 'rw',
     default => sub {
-        my $cache = CHI->new( driver => 'File', global => 1 );
+        my $cache = CHI->new(
+            driver => 'Redis',
+            server => config->{redis_server},
+            global => 1
+);
         return $cache;
     },
 );
@@ -251,8 +257,6 @@ sub _by_route_name {
         }
     }
 }
-
-
 
 sub _get_routes {
     my $self = shift;

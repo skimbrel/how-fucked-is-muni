@@ -16,6 +16,13 @@ is under a threshold value
 * The largest gap between vehicles traveling the same direction on the route
 exceeds a threshold value
 
+# Requirements
+
+* Dancer
+* Redis
+* Perl modules: Moose, CHI/CHI::Driver::Redis, JSON, WWW::ProximoBus (currently
+included in this repository, will probably get a separate distribution later)
+
 # Credits
 
 Sam Kimbrel (kimbrel@me.com)

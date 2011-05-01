@@ -29,3 +29,6 @@ auto_reload: 0
 # The transit agency we're talking about. This should be a
 # agency ID string ProximoBus knows about.
 agency: "sf-muni"
+
+# The location of the Redis server we're caching our data in.
+redis_server: "127.0.0.1:6379"

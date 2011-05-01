@@ -14,7 +14,11 @@ has 'cache' => (
     default => sub {
         # Use a File cache here so we can share between processes
         # and persist across restarts. This is ugly to reload when we miss.
-        my $cache = CHI->new( driver => 'File', namespace => __PACKAGE__ );
+        my $cache = CHI->new(
+            driver => 'Redis',
+            server => config->{redis_server},
+            global => 1
+        );
         return $cache;
     },
 );

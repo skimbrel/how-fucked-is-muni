@@ -20,3 +20,5 @@ route_cache: 1
 # an agency ID string from ProximoBus
 agency: "sf-muni"
 
+# The Redis server we're caching our data in.
+redis_server: "127.0.0.1:6379"
