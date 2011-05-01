@@ -22,3 +22,6 @@ agency: "sf-muni"
 
 # The Redis server we're caching our data in.
 redis_server: "127.0.0.1:6379"
+
+# How often we should refresh our data (in seconds)
+refresh_period: 300 # five minutes should be fine
