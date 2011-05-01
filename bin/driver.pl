@@ -15,8 +15,8 @@ my $environment = shift || 'development';
 my $appdir = realpath("$FindBin::Bin/..");
 
 Dancer::Config::setting('appdir', $appdir);
-Dancer::Config::load();
 config->{environment} = $environment;
+Dancer::Config::load();
 
 my $agency = config->{agency};
 my $period = config->{refresh_period};
