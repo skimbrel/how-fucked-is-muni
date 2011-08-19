@@ -35,13 +35,30 @@ div.container {
     margin-right: 10%;
 }
 
-div.circle {
+div.okay {
     width: 3em; height: 3em;
     -webkit-border-radius: 1.5em; -moz-border-radius: 1.5em;
     font-family: "Helvetica", "Arial", sans-serif;
     font-weight: bold;
     font-size: 36px;
     text-align: center;
+    float: left;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    line-height: 3em;
+    cursor: pointer;
+}
+
+div.fucked {
+    width: 3em; height: 3em;
+    -webkit-border-radius: 1.5em; -moz-border-radius: 1.5em;
+    font-family: "Helvetica", "Arial", sans-serif;
+    font-weight: bold;
+    font-size: 36px;
+    text-align: center;
+    text-decoration: line-through;
     float: left;
     margin-left: 0.5em;
     margin-right: 0.5em;

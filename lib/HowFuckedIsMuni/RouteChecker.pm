@@ -16,6 +16,11 @@ use constant GAP_FACTOR => 0.1;
 use constant SHORT_EXPTIME => '5 minutes';
 use constant LONG_EXPTIME => '1 day';
 
+sub check_all_key {
+    my $agency = shift;
+    return "status-all:$agency";
+}
+
 sub routes_key {
     my $agency = shift;
     return "routes:$agency";
@@ -72,6 +77,26 @@ sub instance {
         $singleton = $class->new();
     }
     return $singleton;
+}
+
+sub check_all_routes {
+    my $self = shift;
+    my ($agency) = @_;
+
+    my $key = check_all_key($agency);
+    return $self->cache->compute($key, SHORT_EXPTIME, sub {
+        my $routes = $self->get_routes($agency);
+        my @ids = keys %{$routes};
+        my $all = {};
+        for my $id (@ids) {
+            my $status = $self->check_route($agency, $id);
+            $all->{$id} = {
+                name => $routes->{$id},
+                status => $status,
+            };
+        }
+        return $all;
+    });
 }
 
 sub check_route {

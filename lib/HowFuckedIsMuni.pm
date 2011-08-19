@@ -9,7 +9,7 @@ get '/' => sub {
     try {
         my $checker = HowFuckedIsMuni::RouteChecker->instance();
         my $colors = HowFuckedIsMuni::RouteColors->new();
-        my $routes = $checker->get_routes(config->{agency});
+        my $routes = $checker->check_all_routes(config->{agency});
         my $names = $checker->get_sorted_names(config->{agency});
         template 'index', { agency => config->{agency}, names => $names, routes => $routes, colors => $colors };
     }
