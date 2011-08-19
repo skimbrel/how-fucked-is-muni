@@ -2,6 +2,7 @@
 <p>Let's find out. Pick a route:</p>
 <div class="container">
 [% FOREACH key IN names %]
+[% IF routes.$key.status.total > 0 %]
 [% IF key.match('\w OWL') %]
 [% name = key.substr(0,1)
    owl = 1
@@ -19,6 +20,7 @@
 <a class="route" href="/[% key %]" title="[% routes.$key.name %]" style="color: [% colors.foreground(agency, key) %];">[% name %]</a>
 [% IF owl %]<span style="font-size: 14px; color: [% colors.foreground(agency, key) %]">OWL</span>[% END %]
 </div>
+[% END %]
 [% END %]
 </div>
 <script type="text/javascript">
