@@ -34,4 +34,4 @@ agency: "sf-muni"
 redis_server: "127.0.0.1:6379"
 
 # How often we should refresh our data (in seconds)
-refresh_period: 60
+refresh_period: 300
