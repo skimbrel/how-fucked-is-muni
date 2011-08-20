@@ -14,10 +14,16 @@
 [% END %]
 [% IF routes.$key.status.is_fucked %]
 <div class="fucked" style="background-color: [% colors.background(agency, key) %];">
+<a class="route" href="/[% key %]" title="[% routes.$key.name %]" style="color: [% colors.foreground(agency, key) %];">[% name %]</a>
+<div class="badger-outter">
+    <div class="badger-inner">
+        <p class="badger-badge badger-number" id="Badge">x</p>
+    </div>
+</div>
 [% ELSE %]
 <div class="okay" style="background-color: [% colors.background(agency, key) %];">
-[% END %]
 <a class="route" href="/[% key %]" title="[% routes.$key.name %]" style="color: [% colors.foreground(agency, key) %];">[% name %]</a>
+[% END %]
 [% IF owl %]<span style="font-size: 14px; color: [% colors.foreground(agency, key) %]">OWL</span>[% END %]
 </div>
 [% END %]
